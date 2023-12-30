@@ -1,13 +1,15 @@
 from django.shortcuts import render, redirect
 from django.contrib import messages
-from app.models import Contact
+from app.models import Contact, Blogs
 # Create your views here.
 
 def home(request):
     return render(request, 'home.html')
 
 def handleblog(request):
-    return render(request,'handleblog.html')
+    posts=Blogs.objects.all()
+    context={"posts":posts}
+    return render(request,'handleblog.html',context)
 
 def about(request):
     return render(request,'about.html')
