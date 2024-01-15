@@ -25,3 +25,6 @@ def contact(request):
         messages.success(request,"Thanks for contacting, we will get back to you soon")
         return redirect('/contact')
     return render(request,'contact.html')
+
+def resume(request):
+    return render(request,'resume.html')
