@@ -24,7 +24,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-1ea3crx8hm)q3zq^ahkq(^4)bqj7xxdoq+4z7@kiqsv74b4iyl'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['127.0.0.1','.vercel.app']
 
@@ -72,7 +72,7 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'PerPort.wsgi.application'
-WSGI_APPLICATION = 'vercel_app.wsgi.app'
+
 
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
@@ -119,18 +119,14 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
 
-import os
-PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
-STATICFILES_DIRS = [
-    os.path.join(PROJECT_ROOT, 'static'),
-]
-STATIC_URL = '/static/'
+STATIC_URL = 'static/'
 
+import os
+STATICFILES_DIRS=[
+    os.path.join(BASE_DIR, 'static')
+]
 
 MEDIA_URL = '/media/'
-
-
-
 MEDIA_ROOT = os.path.join(BASE_DIR,'media')
 
 # Default primary key field type
