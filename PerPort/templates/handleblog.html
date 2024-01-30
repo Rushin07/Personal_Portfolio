@@ -6,25 +6,22 @@
   <div class="container">
     <div class="section-title">
       <h2>Projects</h2>
-      <p>
-        Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex
-        aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos
-        quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat
-        sit in iste officiis commodi quidem hic quas.
-      </p>
+      
     </div>
+
     <div class="row">
+      
   {% for post in posts reversed%}
-      <div class="col-lg-4 col-md-6 icon-box" data-aos="fade-up">
+      <div class="container" data-aos="fade-up">
+        <div class="icon"><i class="bi bi-briefcase"></i></div>
+        <br />
+        <h4 class="title"><a href="">{{post.title}}</a></h4>
+        <br />
         <div class="col-lg-4" data-aos="fade-right">
-          <img src="{{post.img.url}}" class="img-fluid" alt="no-image" />
+          <img src="{{post.img.url}}" width="900" height="550"  alt="no-image" />
         </div>
         <br />
-        <div class="icon"><i class="bi bi-briefcase"></i></div>
-        <h4 class="title"><a href="">{{post.title}}</a></h4>
-        <p class="description">{{post.description}}</p>
-        <h6>Posted By: <b>{{post.authname}}</b></h6>
-        <p>Posted on: <b>{{post.timestamp}}</b></p>
+        <p>{{post.description}}</p>
       </div>
   {% endfor %}
     </div>
