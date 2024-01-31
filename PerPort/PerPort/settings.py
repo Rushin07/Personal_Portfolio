@@ -77,10 +77,23 @@ WSGI_APPLICATION = 'PerPort.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
+#     }
+# }
+
+
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'HOST': 'monorail.proxy.rlwy.net',
+        'NAME': 'railway',
+        'USER': 'postgres',
+        'PASSWORD': 'fg3-AF6f43g1c-A2CE155e1a3B-bE--G',
+        'PORT': '57495',
+
     }
 }
 
