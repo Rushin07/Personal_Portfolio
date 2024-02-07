@@ -6,11 +6,26 @@
   <div class="container">
     <div class="section-title">
       <h2>Projects</h2>
-      
     </div>
-
     <div class="row">
-      
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function() {
+            var hoverSize = [500, 900];
+            
+            $('img').hover(function() {
+                $(this).css({
+                    height: hoverSize[0],
+                    width: hoverSize[1]
+                });
+            }, function() {
+                $(this).css({
+                    height: "",
+                    width: ""
+                });
+            });
+        });
+    </script>
   {% for post in posts reversed%}
       <div class="container" data-aos="fade-up">
         <div class="icon"><i class="bi bi-briefcase"></i></div>
@@ -18,7 +33,7 @@
         <h4 class="title"><a href="">{{post.title}}</a></h4>
         <br />
         <div class="col-lg-4" data-aos="fade-right">
-          <img src="{{post.img.url}}" width="900" height="550"  alt="no-image" />
+          <img src="{{post.img.url}}" width="100%" height="100%"  alt="no-image" />
         </div>
         <br />
         <p>{{post.description}}</p>
